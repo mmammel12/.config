@@ -1,0 +1,24 @@
+[includeIf "gitdir:~/personal/"]
+	path = ~/.gitconfig.personal
+[includeIf "gitdir:~/dev/"]
+	path = ~/.gitconfig.floqast
+[core]
+	excludesfile = /Users/martinmam/.gitignore_global
+[fetch]
+	prune = true
+[alias]
+	graph = log --oneline --decorate --graph --parents
+	a = add .
+	c = commit
+	p = push
+	cm = commit -m
+	force = push --force-with-lease
+	gl = config --global -l
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
