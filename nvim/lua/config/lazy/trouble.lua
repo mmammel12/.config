@@ -1,26 +1,51 @@
 return {
-    {
-        "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup({
-                icons = false,
-            })
-
-            vim.keymap.set("n", "<leader>tt", function()
-                require("trouble").toggle()
-            end, { desc = "trouble - Toggle trouble" })
-
-            vim.keymap.set("n", "[d", function()
-                require("trouble").next({skip_groups = true, jump = true});
-            end, { desc = "trouble - Next trouble" })
-
-            vim.keymap.set("n", "]d", function()
-                require("trouble").previous({skip_groups = true, jump = true});
-            end, { desc = "trouble - Previous trouble" })
-
-            vim.keymap.set("n", "<leader>q", function()
-                require("trouble").toggle("quickfix")
-            end, { desc = "trouble - Quickfix" })
-        end
-    },
+	{
+		"folke/trouble.nvim",
+		opts = {
+			modes = {
+				test = {
+					mode = "diagnostics",
+					preview = {
+						type = "split",
+						relative = "win",
+						position = "right",
+						size = 0.4,
+					},
+				},
+			},
+		},
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xt",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xb",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>xl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xl",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xq",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
+	},
 }
