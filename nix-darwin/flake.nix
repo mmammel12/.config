@@ -44,6 +44,8 @@
           "meetingbar"
         ];
         masApps = {};
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
       fonts.packages =
@@ -70,6 +72,30 @@
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
             '';
+
+      system.defaults = {
+        dock.autohide = false;
+        dock.launchanim = true;
+        dock.show-process-indicators = true;
+        dock.orientation = "right";
+        dock.magnification = false;
+        dock.persistent-apps = [
+          "/System/Applications/System Settings.app"
+          "/System/Applications/Calendar.app"
+          "/Applications/Google Chrome.app"
+          "/Applications/zoom.us.app"
+          "${pkgs.slack}/Applications/Slack.app"
+          "/Applications/Postman.app"
+          "${pkgs.kitty}/Applications/kitty.app"
+          "/Applications/MongoDB Compass.app"
+          "/System/Applications/QuickTime Player.app"
+          "/Applications/Screen Studio.app"
+          "${pkgs.obsidian}/Applications/Obsidian.app"
+          "/Applications/1Password.app"
+        ];
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+        NSGlobalDomain.KeyRepeat = 2;
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
@@ -109,7 +135,7 @@
             user = "martinmam";
             # since homebrew is already installed
             autoMigrate = true;
-          }
+          };
         }
       ];
     };
