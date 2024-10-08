@@ -121,8 +121,8 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#mac
-    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+    # $ darwin-rebuild build --flake .#FQ-M-F6W9QFQG
+    darwinConfigurations."FQ-M-F6W9QFQG" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
         nix-homebrew.darwinModules.nix-homebrew
@@ -141,6 +141,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."mac".pkgs;
+    darwinPackages = self.darwinConfigurations."FQ-M-F6W9QFQG".pkgs;
   };
 }
