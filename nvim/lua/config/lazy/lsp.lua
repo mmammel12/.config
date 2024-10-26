@@ -170,7 +170,7 @@ return {
 				"prettierd", -- prettier daemon formatter
 				"stylua", -- lua formatter
 				"eslint_d", -- js linter
-				"deno", -- js LSP
+				"gopls", -- golang lsp
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -184,6 +184,36 @@ return {
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 						require("lspconfig")[server_name].setup(server)
 					end,
+				},
+			})
+		end,
+	},
+
+	{
+		"crispgm/nvim-go",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
+
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"neovim/nvim-lspconfig",
+		},
+		config = function()
+			-- local api = require("typescript-tools.api")
+			require("typescript-tools").setup({
+				handlers = {
+					["textDocument/publishDiagnostics"] = function() end,
+					-- api.filter_diagnostics({
+					-- codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
+					-- 80001 = "File is a CommonJS module; it may be converted to an ES module."
+					-- 7016 = "Could not find a declaration file for module '{0}'. '{1}' implicitly has an 'any' type."
+					-- 80001,
+					-- 7016,
+					--}),
 				},
 			})
 		end,
@@ -219,9 +249,6 @@ return {
 			--    for various frameworks/libraries/etc. but you will have to
 			--    set up the ones that are useful for you.
 			"rafamadriz/friendly-snippets",
-
-			"vim-denops/denops.vim",
-			"yuki-yano/tsnip.nvim",
 		},
 		config = function()
 			-- See `:help cmp`
@@ -282,7 +309,6 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
-					{ name = "tsnip" },
 				},
 			})
 		end,
