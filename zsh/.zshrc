@@ -117,7 +117,16 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+# set the directory where we store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# download zinit if it's not already downloaded
+if [ ! -d "$ZINIT_HOME" ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone git@github.com:zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -185,10 +194,6 @@ alias gpms="git fetch origin main:main && git switch main"
 alias gprune="~/dev/scripts/pruneBranches.sh"
 alias nuke="rm -rf node_modules package-lock.json && npm i"
 alias nukeci="rm -rf node_modules && npm ci"
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-# End of do not edit.
 
 export GIT_EDITOR=vim
 
