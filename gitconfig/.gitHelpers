@@ -27,6 +27,12 @@ prune_branches() {
 
 commit_and_autosquash() {
     target=$(git log --format=%h --reverse origin/main..main | head -n 1)
+
+    if [ -z "$target" ]; then
+        echo "No commits found after origin/main."
+        return 1
+    fi
+
     git add .
     git commit --fixup=$target
     git fetch origin main
