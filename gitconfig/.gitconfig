@@ -7,13 +7,23 @@
 [fetch]
 	prune = true
 [alias]
-	graph = log --oneline --decorate --graph --parents
 	a = add .
+	ac = "!git add . && git commit"
+	acm = "!git add . && git commit -m"
+	acr = "!. ~/.config/gitconfig/.gitHelpers && commit_and_autosquash"
 	c = commit
-	p = push
 	cm = commit -m
+	fm = fetch origin main:main
+	fms = "!git fm && git switch main"
 	force = push --force-with-lease
-	gl = config --global -l
+	l = "!. ~/.config/gitconfig/.gitHelpers && pretty_git_log"
+	p = push
+	pb = "!. ~/.config/gitconfig/.gitHelpers && prune_branches"
+	rmu = "!. ~/.config/gitconfig/.gitHelpers && remove_untracked_files"
+	s = status
+	st = stash
+	stl = stash list
+	stp = stash pop
 [init]
 	defaultBranch = main
 [rerere]

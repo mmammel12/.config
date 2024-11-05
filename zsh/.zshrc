@@ -186,12 +186,6 @@ alias zshc='vim ~/.zshrc'
 
 alias mid="node -e 'console.log(new require(\"bson-objectid\")().toString())' | tr -d '\n' | pbcopy"
 alias vim="nvim"
-alias gacm="git a && git cm"
-alias gacmr="git a && git cm 'update' && git rebase -i main"
-alias gacmrf="git a && git cm 'update' && git rebase -i main && git force"
-alias gpm="git fetch origin main:main"
-alias gpms="git fetch origin main:main && git switch main"
-alias gprune="~/dev/scripts/pruneBranches.sh"
 alias nuke="rm -rf node_modules package-lock.json && npm i"
 alias nukeci="rm -rf node_modules && npm ci"
 
