@@ -13,12 +13,6 @@ end, { desc = "Set Tabs to 4 spaces" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- move between panes
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
-
 -- move next line to current line and keep cursor position
 vim.keymap.set("n", "J", "mzJ`z")
 
@@ -47,3 +41,6 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 -- search for word under cursor
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- quick go err != nil
+vim.keymap.set("n", "<leader>en", "oif err != nil {<CR>}<Esc>O")

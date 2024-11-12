@@ -190,5 +190,3 @@ alias nuke="rm -rf node_modules package-lock.json && npm i"
 alias nukeci="rm -rf node_modules && npm ci"
 
 export GIT_EDITOR=vim
-
-. "/Users/martinmam/.deno/env"
