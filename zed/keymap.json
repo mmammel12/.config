@@ -1,0 +1,56 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "VimControl && !menu",
+        "bindings": {
+            // Put key bindings here if you want them to work in normal & visual mode.
+            "space y": ["workspace::SendKeystrokes", "cmd-c escape"]
+        }
+    },
+    {
+        "context": "vim_mode == normal && !menu",
+        "bindings": {
+            // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+            "space s h": "pane::SplitLeft",
+            "space s j": "pane::SplitDown",
+            "space s k": "pane::SplitUp",
+            "space s l": "pane::SplitRight",
+            "space e n": ["workspace::SendKeystrokes", "o if space err space != space nil space { enter"],
+            "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+            "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"]
+        }
+    },
+    {
+        "context": "vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+        }
+    },
+    {
+        "context": "vim_mode == visual",
+        "bindings": {}
+    },
+    {
+        "context": "EmptyPane || SharedScreen",
+        "bindings": {
+            // Put key bindings here (in addition to the context above) if you want them to
+            // work when no editor exists.
+            // "space f": "file_finder::Toggle"
+        }
+    },
+    {
+        "context": "Dock",
+        "bindings": {
+            "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+        }
+    }
+]
