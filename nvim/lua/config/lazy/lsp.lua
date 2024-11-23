@@ -171,6 +171,7 @@ return {
 				"stylua", -- lua formatter
 				"eslint_d", -- js linter
 				"gopls", -- golang lsp
+				"htmx-lsp", -- htmx lsp
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -194,6 +195,11 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
+		config = function()
+			require("go").setup({
+				lint_prompt_style = "vt",
+			})
+		end,
 	},
 
 	{
@@ -205,16 +211,17 @@ return {
 		config = function()
 			-- local api = require("typescript-tools.api")
 			require("typescript-tools").setup({
-				handlers = {
-					["textDocument/publishDiagnostics"] = function() end,
-					-- api.filter_diagnostics({
-					-- codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
-					-- 80001 = "File is a CommonJS module; it may be converted to an ES module."
-					-- 7016 = "Could not find a declaration file for module '{0}'. '{1}' implicitly has an 'any' type."
-					-- 80001,
-					-- 7016,
-					--}),
-				},
+				-- handlers = {
+				-- 	["textDocument/publishDiagnostics"] = function()
+				-- 		api.filter_diagnostics({
+				-- 			-- codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
+				-- 			-- 80001 = "File is a CommonJS module; it may be converted to an ES module."
+				-- 			80001,
+				-- 			-- 7016 = "Could not find a declaration file for module '{0}'. '{1}' implicitly has an 'any' type."
+				-- 			7016,
+				-- 		})
+				-- 	end,
+				-- },
 			})
 		end,
 	},
