@@ -10,7 +10,8 @@
 	a = add .
 	ac = "!git add . && git commit"
 	acm = "!git add . && git commit -m"
-	acr = "!. ~/.config/gitconfig/.gitHelpers && commit_and_autosquash"
+	acr = "!git add . && git commit -m 'update' && git rebase -i main"
+	acrf = "!git add . && git commit -m 'update' && git rebase -i main && git force"
 	c = commit
 	cm = commit -m
 	fm = fetch origin main:main

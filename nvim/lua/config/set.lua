@@ -16,6 +16,9 @@ vim.opt.cursorline = true
 -- Show which column your cursor is on
 vim.opt.cursorcolumn = true
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
 vim.opt.list = true
 vim.opt.listchars = { tab = "⇥ ", space = "·", trail = "×", nbsp = "␣" }
 
