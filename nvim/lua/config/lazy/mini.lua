@@ -1,10 +1,11 @@
+-- lua/custom/plugins/mini.lua
 return {
 	{
-		"echasnovski/mini.jump",
-		version = "*",
+		"echasnovski/mini.nvim",
+		enabled = true,
 		config = function()
-			require("mini.jump").setup()
+			local statusline = require("mini.statusline")
+			statusline.setup({ use_icons = true })
 		end,
 	},
-	{ "echasnovski/mini.ai", version = "*" },
 }

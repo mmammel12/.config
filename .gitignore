@@ -4,3 +4,4 @@ node_modules
 raycast/extensions
 zed/prompts
 zed/conversations
+gcloud/

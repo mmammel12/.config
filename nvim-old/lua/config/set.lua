@@ -1,8 +1,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.clipboard = "unnamedplus"
-
 -- turn off wrap
 vim.opt.wrap = false
 
