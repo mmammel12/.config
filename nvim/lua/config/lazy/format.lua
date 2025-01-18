@@ -11,10 +11,10 @@ return {
 				javascriptreact = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				css = { "prettierd" },
+				html = { "prettierd" },
 				json = { "prettierd" },
 				yaml = { "prettierd" },
 				lua = { "stylua" },
-				go = { "goimports" },
 			},
 			format_on_save = function()
 				conform.format({
