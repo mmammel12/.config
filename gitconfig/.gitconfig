@@ -1,6 +1,8 @@
 [includeIf "gitdir:~/personal/"]
 	path = ~/.gitconfig.personal
-[includeIf "gitdir:~/dev/"]
+[includeIf "gitdir:~/.config/"]
+	path = ~/.gitconfig.personal
+[includeIf "gitdir:~/"]
 	path = ~/.gitconfig.floqast
 [core]
 	excludesfile = /Users/martinmam/.gitignore_global
@@ -17,7 +19,7 @@
 	fm = fetch origin main:main
 	fms = "!git fm && git switch main"
 	force = push --force-with-lease
-	graph = "!git --no-pager log --oneline --decorate --graph --parents -10"
+	graph = "!git --no-pager log --oneline --decorate --graph --parents -15"
 	l = "!. ~/.config/gitconfig/.gitHelpers && pretty_git_log"
 	p = push
 	pb = "!. ~/.config/gitconfig/.gitHelpers && prune_branches"
