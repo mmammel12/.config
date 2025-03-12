@@ -2,7 +2,7 @@
 	path = ~/.gitconfig.personal
 [includeIf "gitdir:~/.config/"]
 	path = ~/.gitconfig.personal
-[includeIf "gitdir:~/"]
+[includeIf "gitdir:~/dev"]
 	path = ~/.gitconfig.floqast
 [core]
 	excludesfile = /Users/martinmam/.gitignore_global
