@@ -3,6 +3,13 @@ return {
 		"nvim-lua/plenary.nvim",
 		name = "plenary",
 	},
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+		priority = 100,
+	},
 
 	"gpanders/editorconfig.nvim",
 
