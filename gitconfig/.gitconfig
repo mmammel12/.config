@@ -5,7 +5,7 @@
 [includeIf "gitdir:~/dev"]
 	path = ~/.gitconfig.floqast
 [core]
-	excludesfile = /Users/martinmam/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [fetch]
 	prune = true
 [alias]

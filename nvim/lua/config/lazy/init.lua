@@ -14,6 +14,23 @@ return {
 	"gpanders/editorconfig.nvim",
 
 	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			delay = 350,
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
+	},
+
+	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		config = function()

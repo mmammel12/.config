@@ -8,6 +8,9 @@ local ThePrimeagenGroup = augroup("ThePrimeagen", {})
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
 
+local test_utils = require("config.test-utils")
+test_utils.setup_keymaps()
+
 function R(name)
 	require("plenary.reload").reload_module(name)
 end

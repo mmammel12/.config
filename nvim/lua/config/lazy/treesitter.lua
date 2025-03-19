@@ -54,14 +54,6 @@ return {
 					additional_vim_regex_highlighting = false,
 				},
 
-				-- IMPORTANT: Remove the context_commentstring module to avoid deprecation warnings
-				-- We'll configure it separately in comment.lua
-
-				-- Enable auto-tag for JSX/TSX
-				autotag = {
-					enable = true,
-				},
-
 				textobjects = {
 					select = {
 						enable = true,
