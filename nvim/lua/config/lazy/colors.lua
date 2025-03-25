@@ -16,6 +16,24 @@ return {
 				sidebars = "dark", -- style for sidebars, see below
 				floats = "dark", -- style for floating windows
 			},
+			on_highlights = function(highlights, colors)
+				-- cursor line number in non-focused split
+				highlights.LineNr = {
+					fg = "#f7768e",
+				}
+				-- current line number
+				highlights.CursorLineNr = {
+					fg = "#7dcfff",
+					bold = true,
+				}
+				-- line numbers above and below cursor
+				highlights.LineNrAbove = {
+					fg = "#bb9af7",
+				}
+				highlights.LineNrBelow = {
+					fg = "#bb9af7",
+				}
+			end,
 		})
 
 		vim.cmd.colorscheme("tokyonight-night")
