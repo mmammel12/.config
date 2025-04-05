@@ -2,6 +2,8 @@
 	path = ~/.gitconfig.personal
 [includeIf "gitdir:~/.config/"]
 	path = ~/.gitconfig.personal
+[includeIf "gitdir:~/Exercism/"]
+	path = ~/.gitconfig.personal
 [includeIf "gitdir:~/dev"]
 	path = ~/.gitconfig.floqast
 [core]
