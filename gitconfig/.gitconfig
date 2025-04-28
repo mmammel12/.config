@@ -21,7 +21,7 @@
 	fm = fetch origin main:main
 	fms = "!git fm && git switch main"
 	force = push --force-with-lease
-	graph = "!git --no-pager log --oneline --decorate --graph --parents -15"
+	graph = "!git --no-pager log --oneline --decorate --graph -15"
 	l = "!. ~/.config/gitconfig/.gitHelpers && pretty_git_log"
 	p = push
 	pb = "!. ~/.config/gitconfig/.gitHelpers && prune_branches"
