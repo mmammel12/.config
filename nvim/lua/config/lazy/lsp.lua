@@ -97,6 +97,7 @@ return {
 				},
 				-- TypeScript server configuration
 				tsserver = {
+					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "tsx", "jsx" },
 					settings = {
 						typescript = {
 							inlayHints = {
@@ -148,6 +149,7 @@ return {
 				eslint = {
 					-- Modified to not run EslintFixAll on save to prevent conflicts with conform.nvim
 					-- Instead, rely on conform.nvim for formatting and use ESLint for diagnostics only
+					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 					settings = {
 						-- Add ESLint specific settings here if needed
 						packageManager = "npm",
@@ -169,6 +171,8 @@ return {
 				-- Language servers
 				"gopls",
 				"tsserver",
+				"typescript",
+				"tsx",
 				"html",
 				"cssls",
 				"jsonls",
@@ -280,6 +284,7 @@ return {
 						})
 					end,
 				},
+				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 				settings = {
 					-- Expose commands to organize imports, fix all, etc.
 					expose_as_code_action = { "organize_imports", "remove_unused", "fix_all" },

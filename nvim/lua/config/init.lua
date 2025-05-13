@@ -11,6 +11,15 @@ local yank_group = augroup("HighlightYank", {})
 local test_utils = require("config.test-utils")
 test_utils.setup_keymaps()
 
+vim.filetype.add({
+	extension = {
+		tsx = "typescriptreact",
+		ts = "typescript",
+		jsx = "javascriptreact",
+		js = "javascript",
+	},
+})
+
 function R(name)
 	require("plenary.reload").reload_module(name)
 end
