@@ -90,7 +90,22 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-#
+
+function diffify() {
+  # 1) refresh local knowledge of origin/main
+  git fetch origin main >/dev/null 2>&1
+
+  # 2–4) diff current HEAD vs. origin/main, excluding:
+  #      • all node_modules directories
+  #      • every package-lock.json (root or nested workspaces)
+  #      then print to terminal and copy to clipboard
+  git diff origin/main... \
+    -- . \
+    ':(glob,exclude)**/node_modules/**' \
+    ':(glob,exclude)**/package-lock.json' \
+    | tee >(pbcopy)
+}
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
