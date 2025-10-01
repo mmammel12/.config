@@ -8,6 +8,7 @@
 	path = ~/.gitconfig.floqast
 [core]
 	excludesfile = ~/.gitignore_global
+	hooksPath = /Users/martinmam/.git-hooks
 [fetch]
 	prune = true
 [alias]
@@ -16,7 +17,6 @@
 	acm = "!git add . && git commit -m"
 	acr = "!git add . && git commit -m 'update' && git rebase -i main"
 	acrf = "!git add . && git commit -m 'update' && git rebase -i main && git force"
-	c = commit
 	cm = commit -m
 	fm = fetch origin main:main
 	fms = "!git fm && git switch main"
