@@ -1,3 +1,2 @@
-if not vim.g.vscode then
-	require("config")
-end
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
