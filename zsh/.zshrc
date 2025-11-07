@@ -192,8 +192,12 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Aliases
-alias ls='lsd'
+alias ls='eza'
 alias cat='bat'
+
+alias ..="cd .."
+alias ....="cd ../.."
+alias ......="cd ../../.."
 
 alias zshc='vim ~/.zshrc'
 
