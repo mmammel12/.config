@@ -211,3 +211,6 @@ export GIT_EDITOR=vim
 . "$HOME/.cargo/env"
 
 source ~/.zshrc
+
+# opencode
+export PATH=/Users/martinmam/.opencode/bin:$PATH

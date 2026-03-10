@@ -7,9 +7,6 @@ vim.opt.clipboard = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- turn off wrap
-vim.opt.wrap = false
-
 -- set conceal level to 1 for better formatting in obsidian
 vim.opt.conceallevel = 1
 
