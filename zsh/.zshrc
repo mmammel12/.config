@@ -214,3 +214,6 @@ source ~/.zshrc
 
 # opencode
 export PATH=/Users/martinmam/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/Users/martinmam/.bun/_bun" ] && source "/Users/martinmam/.bun/_bun"

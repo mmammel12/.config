@@ -9,3 +9,4 @@ exercism/user.json
 zsh/*
 !zsh/.zshrc
 !zsh/.p10k.zsh
+.claude
